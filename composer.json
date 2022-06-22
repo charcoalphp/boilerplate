@@ -1,6 +1,6 @@
 {
     "type": "project",
-    "name": "locomotivemtl/charcoal-project-boilerplate",
+    "name": "charcoal/boilerplate",
     "description": "A Charcoal Project Boilerplate",
     "keywords": [
         "charcoal",
@@ -21,13 +21,16 @@
         }
     ],
     "require": {
-        "php": "^7.4 || ^8.1",
-        "locomotivemtl/charcoal-admin": "^0.30",
-        "locomotivemtl/charcoal-app": "^0.9",
-        "locomotivemtl/charcoal-attachment": "^0.10",
-        "locomotivemtl/charcoal-cms": "^0.10",
+        "php": "^7.4 || ^8.0",
+        "charcoal/charcoal": "^2.0",
         "mustache/mustache": "^2.14"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "https://github.com/charcoalphp/charcoal"
+        }
+    ],
     "require-dev": {
         "phpstan/phpstan": "^1.7",
         "phpunit/phpunit": "^9.5",

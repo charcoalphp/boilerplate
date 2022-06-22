@@ -38,6 +38,7 @@ phpstan.neon
 phpunit.xml
 psalm.xml
 
+
 # Caches
 # -------
 
@@ -45,3 +46,8 @@ psalm.xml
 /cache/
 /tmp/
 /test-reports
+
+# hidden
+# ------
+
+/.env

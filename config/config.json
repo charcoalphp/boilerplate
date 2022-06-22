@@ -41,14 +41,14 @@
     "metadata": {
         "paths": [
             "metadata/",
-            "vendor/locomotivemtl/charcoal-admin/metadata/",
-            "vendor/locomotivemtl/charcoal-app/metadata/",
-            "vendor/locomotivemtl/charcoal-attachment/metadata/",
-            "vendor/locomotivemtl/charcoal-cms/metadata/",
-            "vendor/locomotivemtl/charcoal-email/metadata/",
-            "vendor/locomotivemtl/charcoal-object/metadata/",
-            "vendor/locomotivemtl/charcoal-property/metadata/",
-            "vendor/locomotivemtl/charcoal-user/metadata/"
+            "%packages.path%/admin/metadata/",
+            "%packages.path%/app/metadata/",
+            "%packages.path%/attachment/metadata/",
+            "%packages.path%/cms/metadata/",
+            "%packages.path%/email/metadata/",
+            "%packages.path%/object/metadata/",
+            "%packages.path%/property/metadata/",
+            "%packages.path%/user/metadata/"
         ]
     },
     "modules": {
@@ -60,18 +60,18 @@
     "translator": {
         "paths": [
             "translations/app/",
-            "vendor/locomotivemtl/charcoal-admin/translations/",
-            "vendor/locomotivemtl/charcoal-app/translations/",
-            "vendor/locomotivemtl/charcoal-attachment/translations/"
+            "%packages.path%/admin/translations/",
+            "%packages.path%/app/translations/",
+            "%packages.path%/attachment/translations/"
         ]
     },
     "view": {
         "paths": [
             "views/",
-            "vendor/locomotivemtl/charcoal-admin/templates/",
-            "vendor/locomotivemtl/charcoal-app/templates/",
-            "vendor/locomotivemtl/charcoal-attachment/templates/",
-            "vendor/locomotivemtl/charcoal-cms/views/"
+            "%packages.path%/admin/templates/",
+            "%packages.path%/app/templates/",
+            "%packages.path%/attachment/templates/",
+            "%packages.path%/cms/views/"
         ]
     }
 }
