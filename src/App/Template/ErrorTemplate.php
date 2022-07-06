@@ -14,11 +14,28 @@ class ErrorTemplate extends AbstractTemplate
     use HandlerAwareTrait;
 
     /**
+     * Gets the data keys on this entity.
+     * @see
+     *
+     * @return array
+     */
+    public function keys($keys = null)
+    {
+        return array_merge(parent::keys($keys), [
+            'debug',
+            'errorCode',
+            'errorMessage',
+            'errorTitle',
+            'htmlErrorDetails'
+        ]);
+    }
+
+    /**
      * Retrieve the application debug mode.
      *
      * @return boolean
      */
-    public function getDebug()
+    public function debug()
     {
         if ($this->appHandler() instanceof AbstractError) {
             return parent::debug();
@@ -32,7 +49,7 @@ class ErrorTemplate extends AbstractTemplate
      *
      * @return integer
      */
-    public function getErrorCode()
+    public function errorCode()
     {
         return $this->appHandler()->getCode();
     }
@@ -42,7 +59,7 @@ class ErrorTemplate extends AbstractTemplate
      *
      * @return string
      */
-    public function getErrorMessage()
+    public function errorMessage()
     {
         return $this->appHandler()->getMessage();
     }
@@ -52,7 +69,7 @@ class ErrorTemplate extends AbstractTemplate
      *
      * @return string
      */
-    public function getErrorTitle()
+    public function errorTitle()
     {
         return $this->appHandler()->getSummary();
     }
@@ -62,7 +79,7 @@ class ErrorTemplate extends AbstractTemplate
      *
      * @return string|null
      */
-    final public function getHtmlErrorDetails()
+    final public function htmlErrorDetails()
     {
         if ($this->debug()) {
             return $this->appHandler()->renderHtmlErrorDetails();
