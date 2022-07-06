@@ -18,7 +18,7 @@ class ErrorTemplate extends AbstractTemplate
      *
      * @return boolean
      */
-    public function debug()
+    public function getDebug()
     {
         if ($this->appHandler() instanceof AbstractError) {
             return parent::debug();
@@ -32,7 +32,7 @@ class ErrorTemplate extends AbstractTemplate
      *
      * @return integer
      */
-    public function errorCode()
+    public function getErrorCode()
     {
         return $this->appHandler()->getCode();
     }
@@ -42,7 +42,7 @@ class ErrorTemplate extends AbstractTemplate
      *
      * @return string
      */
-    public function errorMessage()
+    public function getErrorMessage()
     {
         return $this->appHandler()->getMessage();
     }
@@ -52,7 +52,7 @@ class ErrorTemplate extends AbstractTemplate
      *
      * @return string
      */
-    public function errorTitle()
+    public function getErrorTitle()
     {
         return $this->appHandler()->getSummary();
     }
@@ -62,7 +62,7 @@ class ErrorTemplate extends AbstractTemplate
      *
      * @return string|null
      */
-    final public function htmlErrorDetails()
+    final public function getHtmlErrorDetails()
     {
         if ($this->debug()) {
             return $this->appHandler()->renderHtmlErrorDetails();
