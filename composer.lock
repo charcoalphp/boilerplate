@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "647550c278acb0ba233829407b75e709",
+    "content-hash": "1c9a3e377b97caa616d871e3502a7870",
     "packages": [
         {
             "name": "barryvdh/elfinder-flysystem-driver",
@@ -68,16 +68,16 @@
         },
         {
             "name": "charcoal/charcoal",
-            "version": "v2.2.1",
+            "version": "dev-feature/twig-implementation",
             "source": {
                 "type": "git",
                 "url": "https://github.com/charcoalphp/charcoal.git",
-                "reference": "b3ac9fc2c3c2b0c3cfd2e8e03471ca0232c6c899"
+                "reference": "c1ffed3c725260364a7d78c70c27ccaf9b88e625"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/charcoalphp/charcoal/zipball/b3ac9fc2c3c2b0c3cfd2e8e03471ca0232c6c899",
-                "reference": "b3ac9fc2c3c2b0c3cfd2e8e03471ca0232c6c899",
+                "url": "https://api.github.com/repos/charcoalphp/charcoal/zipball/c1ffed3c725260364a7d78c70c27ccaf9b88e625",
+                "reference": "c1ffed3c725260364a7d78c70c27ccaf9b88e625",
                 "shasum": ""
             },
             "require": {
@@ -257,10 +257,10 @@
                 "framework"
             ],
             "support": {
-                "source": "https://github.com/charcoalphp/charcoal/tree/v2.2.1",
+                "source": "https://github.com/charcoalphp/charcoal/tree/feature/twig-implementation",
                 "issues": "https://github.com/charcoalphp/charcoal/issues"
             },
-            "time": "2022-06-22T14:51:54+00:00"
+            "time": "2022-07-05T15:27:52+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -6230,7 +6230,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "charcoal/charcoal": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
