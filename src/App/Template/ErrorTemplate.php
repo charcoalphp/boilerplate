@@ -20,7 +20,7 @@ class ErrorTemplate extends AbstractTemplate
      */
     public function keys()
     {
-        return array_merge(parent::keys($keys), [
+        return array_merge(parent::keys(), [
             'debug',
             'errorCode',
             'errorMessage',
