@@ -58,21 +58,32 @@ abstract class AbstractTemplate extends AbstractWebTemplate
         return array_merge(self::CORE_TEMPLATE_ACTIONS, $methods);
     }
 
-    private function retrieveDynamicMethods()
+    /**
+     * Retrieve the template's public methods.
+     *
+     * @return string[]
+     */
+    private function getTemplateMethods(): array
     {
-        $reflectionClass = new \ReflectionClass($this);
-        $reflectionMethods = $reflectionClass->getMethods();
-        $methodKeys = [];
+        $reflectionClass   = new \ReflectionClass($this);
+        $reflectionMethods = $reflectionClass->getMethods(\ReflectionMethod::IS_PUBLIC);
+
+        $keys = [];
         foreach ($reflectionMethods as $reflectionMethod) {
+            /** Include only methods in the {@see \App} namespace. */
             if (substr($reflectionMethod->class, 0, 3) !== 'App') {
                continue;
             }
 
+            /** Include only methods with the following prefixes. */
             if (substr($reflectionMethod->name, 0, 3) === 'get') {
-               $methodKeys[] = lcfirst(substr($reflectionMethod->name, 3));
+               $keys[] = lcfirst(substr($reflectionMethod->name, 3));
+            } elseif (preg_match('/^(has|hide|is|show)/', $reflectionMethod->name)) {
+               $keys[] = lcfirst(substr($reflectionMethod->name, 3));
             }
         }
-        return $methodKeys;
+        
+        return $keys;
     }
 
 

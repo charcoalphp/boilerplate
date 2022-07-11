@@ -14,19 +14,16 @@ class ErrorTemplate extends AbstractTemplate
     use HandlerAwareTrait;
 
     /**
-     * Gets the data keys on this entity.
-     * @see
-     *
-     * @return array
+     * @inheritdoc
      */
-    public function keys($keys = null)
+    public function keys()
     {
         return array_merge(parent::keys($keys), [
             'debug',
             'errorCode',
             'errorMessage',
             'errorTitle',
-            'htmlErrorDetails'
+            'htmlErrorDetails',
         ]);
     }
 
