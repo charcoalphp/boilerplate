@@ -16,46 +16,42 @@ abstract class AbstractTemplate extends AbstractWebTemplate
      */
     const ASSETS_VERSION = '1.0';
 
-    const CORE_TEMPLATE_ACTIONS = [
-        'siteName',
-        'google',
-        'typekit',
-        'htmlAttrStructure',
-        'htmlAttr',
-        'assetsVersion',
-        'copyright',
-        'copyrightName',
-        'copyrightYear',
-        'criticalCss',
-        'templateName',
-        'title',
-        'currentLocale',
-        'currentUrl',
-        'currentLanguage',
-        'metaTitle',
-        'metaDescription',
-        // 'metaImage',
-        'opengraphType',
-        // 'opengraphImage',
-        'seoMetadata',
-        'baseUrl',
-        'availableLanguages',
-        'hasSeoMetadata',
-        'documentTitle',
-        'hasAlternateTranslations',
-        'alternateTranslations',
-    ];
-
     /**
      * Gets the data keys on this entity.
      * @see
      *
      * @return array
      */
-    public function keys($keys = null)
+    public function keys()
     {
         $methods = $this->retrieveDynamicMethods();
-        return array_merge(self::CORE_TEMPLATE_ACTIONS, $methods);
+        return array_merge([
+            'alternateTranslations',
+            'assetsVersion',
+            'availableLanguages',
+            'baseUrl',
+            'copyright',
+            'copyrightName',
+            'copyrightYear',
+            'criticalCss',
+            'currentLanguage',
+            'currentLocale',
+            'currentUrl',
+            'documentTitle',
+            'google',
+            'hasAlternateTranslations',
+            'hasSeoMetadata',
+            'htmlAttr',
+            'htmlAttrStructure',
+            'metaTitle',
+            'metaDescription',
+            'opengraphType',
+            'seoMetadata',
+            'siteName',
+            'templateName',
+            'title',
+            'typekit',
+        ], $methods);
     }
 
     /**

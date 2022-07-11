@@ -4,10 +4,11 @@ namespace App\ServiceProvider;
 
 use Charcoal\Email\ServiceProvider\EmailServiceProvider;
 use Charcoal\Model\ServiceProvider\ModelServiceProvider;
+
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
-use \Twig\Extension\DebugExtension;
+use Twig\Extension\DebugExtension;
 
 /**
  * App Service Provider
