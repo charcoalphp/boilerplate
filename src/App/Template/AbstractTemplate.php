@@ -4,6 +4,9 @@ namespace App\Template;
 
 use Charcoal\Cms\AbstractWebTemplate;
 
+use ReflectionClass;
+use ReflectionMethod;
+
 /**
  * Base Template Controller
  */
@@ -24,7 +27,7 @@ abstract class AbstractTemplate extends AbstractWebTemplate
      */
     public function keys()
     {
-        $methods = $this->retrieveDynamicMethods();
+        $methods = $this->getTemplateMethods();
         return array_merge([
             'alternateTranslations',
             'assetsVersion',
@@ -61,8 +64,8 @@ abstract class AbstractTemplate extends AbstractWebTemplate
      */
     private function getTemplateMethods(): array
     {
-        $reflectionClass   = new \ReflectionClass($this);
-        $reflectionMethods = $reflectionClass->getMethods(\ReflectionMethod::IS_PUBLIC);
+        $reflectionClass   = new ReflectionClass($this);
+        $reflectionMethods = $reflectionClass->getMethods(ReflectionMethod::IS_PUBLIC);
 
         $keys = [];
         foreach ($reflectionMethods as $reflectionMethod) {
@@ -78,7 +81,7 @@ abstract class AbstractTemplate extends AbstractWebTemplate
                $keys[] = lcfirst(substr($reflectionMethod->name, 3));
             }
         }
-        
+
         return $keys;
     }
 
