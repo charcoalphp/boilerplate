@@ -21,7 +21,6 @@ abstract class AbstractTemplate extends AbstractWebTemplate
 
     /**
      * Gets the data keys on this entity.
-     * @see
      *
      * @return array
      */
@@ -71,14 +70,14 @@ abstract class AbstractTemplate extends AbstractWebTemplate
         foreach ($reflectionMethods as $reflectionMethod) {
             /** Include only methods in the {@see \App} namespace. */
             if (substr($reflectionMethod->class, 0, 3) !== 'App') {
-               continue;
+                continue;
             }
 
             /** Include only methods with the following prefixes. */
             if (substr($reflectionMethod->name, 0, 3) === 'get') {
-               $keys[] = lcfirst(substr($reflectionMethod->name, 3));
+                $keys[] = lcfirst(substr($reflectionMethod->name, 3));
             } elseif (preg_match('/^(has|hide|is|show)/', $reflectionMethod->name)) {
-               $keys[] = lcfirst(substr($reflectionMethod->name, 3));
+                $keys[] = lcfirst(substr($reflectionMethod->name, 3));
             }
         }
 
@@ -104,7 +103,7 @@ abstract class AbstractTemplate extends AbstractWebTemplate
     {
         return array_replace(
             parent::formatAlternateTranslation($context, $localeStruct),
-            [ 'url'      => (string) $this->formatAlternateTranslationUrl($context, $localeStruct), ]
+            [ 'url'      => (string)$this->formatAlternateTranslationUrl($context, $localeStruct), ]
         );
     }
 

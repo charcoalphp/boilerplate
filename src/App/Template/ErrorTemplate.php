@@ -15,6 +15,8 @@ class ErrorTemplate extends AbstractTemplate
 
     /**
      * @inheritdoc
+     *
+     * @return array
      */
     public function keys()
     {
