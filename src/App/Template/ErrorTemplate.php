@@ -14,6 +14,22 @@ class ErrorTemplate extends AbstractTemplate
     use HandlerAwareTrait;
 
     /**
+     * @inheritdoc
+     *
+     * @return array
+     */
+    public function keys()
+    {
+        return array_merge(parent::keys(), [
+            'debug',
+            'errorCode',
+            'errorMessage',
+            'errorTitle',
+            'htmlErrorDetails',
+        ]);
+    }
+
+    /**
      * Retrieve the application debug mode.
      *
      * @return boolean

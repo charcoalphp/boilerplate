@@ -4,8 +4,11 @@ namespace App\ServiceProvider;
 
 use Charcoal\Email\ServiceProvider\EmailServiceProvider;
 use Charcoal\Model\ServiceProvider\ModelServiceProvider;
+
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
+
+use Twig\Extension\DebugExtension;
 
 /**
  * App Service Provider
@@ -34,6 +37,20 @@ class AppServiceProvider implements ServiceProviderInterface
             ];
 
             return array_merge($helpers, $helper);
+        });
+
+        /**
+         * Extend global helpers for the Twig Engine.
+         *
+         * @param  array     $helpers   The Mustache helper collection.
+         * @param  Container $container A container instance.
+         * @return array
+         */
+        $container->extend('view/twig/helpers', function (array $helpers) {
+            return array_merge(
+                $helpers,
+                [ new DebugExtension() ],
+            );
         });
     }
 }

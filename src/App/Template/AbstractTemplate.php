@@ -4,6 +4,9 @@ namespace App\Template;
 
 use Charcoal\Cms\AbstractWebTemplate;
 
+use ReflectionClass;
+use ReflectionMethod;
+
 /**
  * Base Template Controller
  */
@@ -16,10 +19,93 @@ abstract class AbstractTemplate extends AbstractWebTemplate
      */
     const ASSETS_VERSION = '1.0';
 
+    /**
+     * Gets the data keys on this entity.
+     *
+     * @return array
+     */
+    public function keys()
+    {
+        $methods = $this->getTemplateMethods();
+        return array_merge([
+            'alternateTranslations',
+            'assetsVersion',
+            'availableLanguages',
+            'baseUrl',
+            'copyright',
+            'copyrightName',
+            'copyrightYear',
+            'criticalCss',
+            'currentLanguage',
+            'currentLocale',
+            'currentUrl',
+            'documentTitle',
+            'google',
+            'hasAlternateTranslations',
+            'hasSeoMetadata',
+            'htmlAttr',
+            'htmlAttrStructure',
+            'metaTitle',
+            'metaDescription',
+            'opengraphType',
+            'seoMetadata',
+            'siteName',
+            'templateName',
+            'title',
+            'typekit',
+        ], $methods);
+    }
+
+    /**
+     * Retrieve the template's public methods.
+     *
+     * @return string[]
+     */
+    private function getTemplateMethods(): array
+    {
+        $reflectionClass   = new ReflectionClass($this);
+        $reflectionMethods = $reflectionClass->getMethods(ReflectionMethod::IS_PUBLIC);
+
+        $keys = [];
+        foreach ($reflectionMethods as $reflectionMethod) {
+            /** Include only methods in the {@see \App} namespace. */
+            if (substr($reflectionMethod->class, 0, 3) !== 'App') {
+                continue;
+            }
+
+            /** Include only methods with the following prefixes. */
+            if (substr($reflectionMethod->name, 0, 3) === 'get') {
+                $keys[] = lcfirst(substr($reflectionMethod->name, 3));
+            } elseif (preg_match('/^(has|hide|is|show)/', $reflectionMethod->name)) {
+                $keys[] = lcfirst(substr($reflectionMethod->name, 3));
+            }
+        }
+
+        return $keys;
+    }
 
 
     // Site Head/Metatags
     // ============================================================
+
+    /**
+     * Format an alternate translation for the given translatable model.
+     *
+     * Note: The application's locale is already modified and will be reset
+     * after processing all available languages.
+     *
+     * @param  mixed $context      The translated {@see \Charcoal\Model\ModelInterface model}
+     *     or array-accessible structure.
+     * @param  array $localeStruct The currently iterated language.
+     * @return array Returns a link structure.
+     */
+    protected function formatAlternateTranslation($context, array $localeStruct)
+    {
+        return array_replace(
+            parent::formatAlternateTranslation($context, $localeStruct),
+            [ 'url'      => (string)$this->formatAlternateTranslationUrl($context, $localeStruct), ]
+        );
+    }
 
     /**
      * Retrieve the site name.
@@ -30,7 +116,6 @@ abstract class AbstractTemplate extends AbstractWebTemplate
     {
         return $this->appConfig('project_name');
     }
-
 
 
     // APIs

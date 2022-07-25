@@ -1,0 +1,14 @@
+{% if debug %}
+
+<pre>
+{{ htmlErrorDetails|raw }}
+</pre>
+
+{% else %}
+
+{% include 'app/template/partial/site-header' %}
+<h1>{{ "Page Not Found"|trans }}</h1>
+<p>{{ "The page you are looking for could not be found."|trans }}</p>
+{% include 'app/template/partial/site-footer' %}
+
+{% endif %}

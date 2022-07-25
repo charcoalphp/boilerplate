@@ -20,6 +20,7 @@ $this->addFile(__DIR__ . '/templates.json');
 
 /** Import attachments */
 $this->addFile(__DIR__ . '/attachments.json');
+$this->addFile(dirname(__DIR__) . '/vendor/charcoal/charcoal/packages/attachment/config/admin.json');
 
 /** Import local settings */
 $appEnv = 'local';
