@@ -45,5 +45,5 @@ psalm.xml
 
 /.phpunit.result.cache
 /cache/
+/test-reports/
 /tmp/
-/test-reports
