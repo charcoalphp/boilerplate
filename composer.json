@@ -11,8 +11,8 @@
     "homepage": "https://charcoal.locomotive.ca/",
     "license": "MIT",
     "support": {
-        "source": "https://github.com/locomotivemtl/charcoal-project-boilerplate",
-        "issues": "https://github.com/locomotivemtl/charcoal-project-boilerplate/issues"
+        "source": "https://github.com/charcoalphp/boilerplate",
+        "issues": "https://github.com/charcoalphp/boilerplate/issues"
     },
     "authors": [
         {

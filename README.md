@@ -1,5 +1,11 @@
-Charcoal Project Boilerplate
-============================
+# Charcoal Project Boilerplate
+
+[![Build Status][github-badge]][github-actions]
+[![Latest Stable Version][version-badge]][boilerplate-pkg]
+[![License][license-badge]](LICENSE)
+[![Uses Semantic Release with Conventional Commits][semantic-release-badge]][semantic-release]
+[![Commitizen-friendly][commitizen-badge]][commitizen]
+[![Supported PHP Version][php-badge]](composer.json)
 
 The goal of this project is to provide a fully working "boilerplate" (empty _skeleton_ project) using the Charcoal framework.
 
@@ -75,7 +81,7 @@ To start a Charcoal project with this Boilerplate, simply:
 Charcoal uses the Composer `create-project` command to install the boilerplate:
 
 ```shell
-★ composer create-project --prefer-dist locomotivemtl/charcoal-project-boilerplate acme
+★ composer create-project --prefer-dist charcoal/boilerplate acme
 ```
 
 Replace "acme" with the desired directory name for your new project.
@@ -337,27 +343,35 @@ To run the scripts (phplint, phpcs and phpunit):
 - `squizlabs/php_codesniffer`
 - `satooshi/php-coveralls`
 
-## Continuous Integration
-
-| Service | Badge | Description |
-| ------- | ----- | ----------- |
-| [Travis](https://travis-ci.org/locomotivemtl/charcoal-project-boilerplate) | [![Build Status](https://travis-ci.org/locomotivemtl/charcoal-project-boilerplate.svg?branch=master)](https://travis-ci.org/locomotivemtl/charcoal-project-boilerplate) | Runs code sniff check and unit tests. Auto-generates API documentation. |
-| [Scrutinizer](https://scrutinizer-ci.com/g/locomotivemtl/charcoal-project-boilerplate/) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/locomotivemtl/charcoal-project-boilerplate/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/locomotivemtl/charcoal-project-boilerplate/?branch=master) | Code quality checker. Also validates API documentation quality. |
-| [Coveralls](https://coveralls.io/github/locomotivemtl/charcoal-project-boilerplate) | [![Coverage Status](https://coveralls.io/repos/github/locomotivemtl/charcoal-project-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/locomotivemtl/charcoal-project-boilerplate?branch=master) | Unit Tests code coverage. |
-| [Sensiolabs](https://insight.sensiolabs.com/projects/533b5796-7e69-42a7-a046-71342146308a) | [![SensioLabsInsight](https://insight.sensiolabs.com/projects/533b5796-7e69-42a7-a046-71342146308a/mini.png)](https://insight.sensiolabs.com/projects/533b5796-7e69-42a7-a046-71342146308a) | Another code quality checker, focused on PHP. |
-
 ## Coding Style
 
-The charcoal-project-boilerplate module follows the Charcoal coding-style:
+The Boilerplate package follows:
 
-- [_PSR-1_](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md)
-- [_PSR-2_](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md)
-- [_PSR-4_](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md), autoloading is therefore provided by _Composer_.
-- [_phpDocumentor_](http://phpdoc.org/) comments.
-- Read the [phpcs.xml](phpcs.xml) file for all the details on code style.
+- [_PSR-4_][PSR-4], autoloading is therefore provided by _Composer_.
+- [_PSR-2_][PSR-12], coding style
+- [_PHPDoc_](http://phpdoc.org/) comments.
+- Read the [phpcs.xml.dist](phpcs.xml.dist) file for all the details on code style.
 
-> Coding style validation / enforcement can be performed with `composer phpcs`. An auto-fixer is also available with `composer phpcbf`.
+> Coding style validation / enforcement can be performed with `composer lint:phpcs`. An auto-fixer is also available with `composer fix:phpcbf`.
 
 ## Authors
 
 - [Locomotive, a Montreal Web agency](https://locomotive.ca)
+
+[boilerplate-pkg]:                      https://packagist.org/packages/charcoal/boilerplate
+[commitizen]:                           https://github.com/commitizen/cz-cli
+[commitizen-badge]:                     https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square
+[conventional-commits]:                 https://www.conventionalcommits.org/en/v1.0.0/
+[github-actions]:                       https://github.com/charcoalphp/boilerplate/actions
+[github-badge]:                         https://img.shields.io/github/workflow/status/charcoalphp/boilerplate/Test?label=build
+[keepachangelog]:                       https://keepachangelog.com/en/1.0.0/
+[license-badge]:                        https://img.shields.io/packagist/l/charcoal/boilerplate.svg?style=flat-square
+[locomotivemtl/locomotive-boilerplate]: https://github.com/locomotivemtl/locomotive-boilerplate
+[packagist.org]:                        https://packagist.org/packages/charcoal/boilerplate
+[php-badge]:                            https://img.shields.io/packagist/php-v/charcoal/boilerplate?style=flat-square&logo=php
+[PSR-4]:                                https://www.php-fig.org/psr/psr-4/
+[PSR-12]:                               https://www.php-fig.org/psr/psr-12/
+[version-badge]:                        https://img.shields.io/packagist/v/charcoal/boilerplate.svg?style=flat-square&logo=packagist
+[semantic-release]:                     https://github.com/semantic-release/semantic-release
+[semantic-release-badge]:               https://img.shields.io/badge/semantic--release-conventionalcommits-e10079?logo=semantic-release&style=flat-square
+[semver]:                               https://semver.org
