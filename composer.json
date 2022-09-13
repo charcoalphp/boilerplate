@@ -25,12 +25,6 @@
         "charcoal/charcoal": "^2.0",
         "mustache/mustache": "^2.14"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url":  "https://github.com/charcoalphp/charcoal"
-        }
-    ],
     "require-dev": {
         "phpstan/phpstan": "^1.7",
         "phpunit/phpunit": "^9.5",
@@ -38,12 +32,12 @@
         "squizlabs/php_codesniffer": "^3.6",
         "vimeo/psalm": "^4.23"
     },
-    "config": {
-        "allow-plugins": {},
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true
-    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "https://github.com/charcoalphp/charcoal"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "App\\": "src/App",
@@ -55,8 +49,6 @@
             "Tests\\": "tests/"
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "scripts": {
         "fix": [
             "@fix-phpcbf",
@@ -80,5 +72,13 @@
         "lint-phpstan": "phpstan analyse",
         "lint-psalm": "psalm",
         "test-phpunit": "phpunit --coverage-text"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {},
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
     }
 }
