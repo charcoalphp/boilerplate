@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f6b543e6886ee02b1da72f7f883d7ae2",
+    "content-hash": "a04c84ec8054cf18eb81564861911054",
     "packages": [
         {
             "name": "barryvdh/elfinder-flysystem-driver",
@@ -68,16 +68,16 @@
         },
         {
             "name": "charcoal/charcoal",
-            "version": "v3.1.7",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/charcoalphp/charcoal.git",
-                "reference": "75d637decd1ce77b34e6bb1b15ad8528a23575ae"
+                "reference": "6a054800efd2f2263554f524dd5a76f96db9f671"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/charcoalphp/charcoal/zipball/75d637decd1ce77b34e6bb1b15ad8528a23575ae",
-                "reference": "75d637decd1ce77b34e6bb1b15ad8528a23575ae",
+                "url": "https://api.github.com/repos/charcoalphp/charcoal/zipball/6a054800efd2f2263554f524dd5a76f96db9f671",
+                "reference": "6a054800efd2f2263554f524dd5a76f96db9f671",
                 "shasum": ""
             },
             "require": {
@@ -111,23 +111,23 @@
                 "vlucas/phpdotenv": "^5.4"
             },
             "replace": {
-                "charcoal/admin": "3.1.7",
-                "charcoal/app": "3.1.7",
-                "charcoal/attachment": "3.1.7",
-                "charcoal/cache": "3.1.7",
-                "charcoal/cms": "3.1.7",
-                "charcoal/config": "3.1.7",
-                "charcoal/core": "3.1.7",
-                "charcoal/email": "3.1.7",
-                "charcoal/factory": "3.1.7",
-                "charcoal/image": "3.1.7",
-                "charcoal/object": "3.1.7",
-                "charcoal/property": "3.1.7",
-                "charcoal/queue": "3.1.7",
-                "charcoal/translator": "3.1.7",
-                "charcoal/ui": "3.1.7",
-                "charcoal/user": "3.1.7",
-                "charcoal/view": "3.1.7",
+                "charcoal/admin": "4.0.0",
+                "charcoal/app": "4.0.0",
+                "charcoal/attachment": "4.0.0",
+                "charcoal/cache": "4.0.0",
+                "charcoal/cms": "4.0.0",
+                "charcoal/config": "4.0.0",
+                "charcoal/core": "4.0.0",
+                "charcoal/email": "4.0.0",
+                "charcoal/factory": "4.0.0",
+                "charcoal/image": "4.0.0",
+                "charcoal/object": "4.0.0",
+                "charcoal/property": "4.0.0",
+                "charcoal/queue": "4.0.0",
+                "charcoal/translator": "4.0.0",
+                "charcoal/ui": "4.0.0",
+                "charcoal/user": "4.0.0",
+                "charcoal/view": "4.0.0",
                 "locomotivemtl/charcoal-admin": "*",
                 "locomotivemtl/charcoal-app": "*",
                 "locomotivemtl/charcoal-attachment": "*",
@@ -281,10 +281,10 @@
                 "framework"
             ],
             "support": {
-                "source": "https://github.com/charcoalphp/charcoal/tree/v3.1.7",
+                "source": "https://github.com/charcoalphp/charcoal/tree/v4.0.0",
                 "issues": "https://github.com/charcoalphp/charcoal/issues"
             },
-            "time": "2022-09-15T16:13:37+00:00"
+            "time": "2022-09-21T20:45:52+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -3229,16 +3229,16 @@
         },
         {
             "name": "composer/pcre",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/pcre.git",
-                "reference": "6af1968c25e178a49febc8b72bef2685e25be396"
+                "reference": "4482b6409ca6bfc2af043a5711cd21ac3e7a8dfb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/pcre/zipball/6af1968c25e178a49febc8b72bef2685e25be396",
-                "reference": "6af1968c25e178a49febc8b72bef2685e25be396",
+                "url": "https://api.github.com/repos/composer/pcre/zipball/4482b6409ca6bfc2af043a5711cd21ac3e7a8dfb",
+                "reference": "4482b6409ca6bfc2af043a5711cd21ac3e7a8dfb",
                 "shasum": ""
             },
             "require": {
@@ -3280,7 +3280,7 @@
             ],
             "support": {
                 "issues": "https://github.com/composer/pcre/issues",
-                "source": "https://github.com/composer/pcre/tree/3.0.1"
+                "source": "https://github.com/composer/pcre/tree/3.0.2"
             },
             "funding": [
                 {
@@ -3296,7 +3296,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-03T15:58:55+00:00"
+            "time": "2022-11-03T20:24:16+00:00"
         },
         {
             "name": "composer/semver",

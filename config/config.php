@@ -1,8 +1,5 @@
 <?php
 
-/** The application's absolute root path */
-$this['base_path'] = dirname(__DIR__).'/';
-
 /** Import core settings */
 $this->addFile(__DIR__ . '/config.json');
 

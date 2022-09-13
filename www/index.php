@@ -12,11 +12,16 @@ if (PHP_SAPI === 'cli-server') {
     }
 }
 
-require dirname(__DIR__) . '/vendor/autoload.php';
+$basePath = dirname(__DIR__);
+
+require $basePath . '/vendor/autoload.php';
 
 /* Import the application's settings */
-$appConfig = new AppConfig();
-$appConfig->addFile(dirname(__DIR__) . '/config/config.php');
+$appConfig = new AppConfig([
+    'base_path'   => $basePath,
+    'public_path' => __DIR__,
+]);
+$appConfig->addFile($basePath . '/config/config.php');
 
 /* Build the DI container */
 $container = new AppContainer([
