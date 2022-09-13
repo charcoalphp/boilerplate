@@ -1,6 +1,7 @@
 # Charcoal
 # -------
 
+/.env
 /config/admin.*.*
 !/config/admin.sample.*
 /config/config.*.*
@@ -46,8 +47,3 @@ psalm.xml
 /cache/
 /tmp/
 /test-reports
-
-# hidden
-# ------
-
-/.env
