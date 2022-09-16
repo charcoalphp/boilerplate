@@ -68,16 +68,16 @@
         },
         {
             "name": "charcoal/charcoal",
-            "version": "v3.1.6",
+            "version": "v3.1.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/charcoalphp/charcoal.git",
-                "reference": "2f1d7de6ccade97af89d9c085c15549607193631"
+                "reference": "5ca1417b4da6fbac37951df4496362bc679fc042"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/charcoalphp/charcoal/zipball/2f1d7de6ccade97af89d9c085c15549607193631",
-                "reference": "2f1d7de6ccade97af89d9c085c15549607193631",
+                "url": "https://api.github.com/repos/charcoalphp/charcoal/zipball/5ca1417b4da6fbac37951df4496362bc679fc042",
+                "reference": "5ca1417b4da6fbac37951df4496362bc679fc042",
                 "shasum": ""
             },
             "require": {
@@ -111,23 +111,23 @@
                 "vlucas/phpdotenv": "^5.4"
             },
             "replace": {
-                "charcoal/admin": "3.1.6",
-                "charcoal/app": "3.1.6",
-                "charcoal/attachment": "3.1.6",
-                "charcoal/cache": "3.1.6",
-                "charcoal/cms": "3.1.6",
-                "charcoal/config": "3.1.6",
-                "charcoal/core": "3.1.6",
-                "charcoal/email": "3.1.6",
-                "charcoal/factory": "3.1.6",
-                "charcoal/image": "3.1.6",
-                "charcoal/object": "3.1.6",
-                "charcoal/property": "3.1.6",
-                "charcoal/queue": "3.1.6",
-                "charcoal/translator": "3.1.6",
-                "charcoal/ui": "3.1.6",
-                "charcoal/user": "3.1.6",
-                "charcoal/view": "3.1.6",
+                "charcoal/admin": "3.1.8",
+                "charcoal/app": "3.1.8",
+                "charcoal/attachment": "3.1.8",
+                "charcoal/cache": "3.1.8",
+                "charcoal/cms": "3.1.8",
+                "charcoal/config": "3.1.8",
+                "charcoal/core": "3.1.8",
+                "charcoal/email": "3.1.8",
+                "charcoal/factory": "3.1.8",
+                "charcoal/image": "3.1.8",
+                "charcoal/object": "3.1.8",
+                "charcoal/property": "3.1.8",
+                "charcoal/queue": "3.1.8",
+                "charcoal/translator": "3.1.8",
+                "charcoal/ui": "3.1.8",
+                "charcoal/user": "3.1.8",
+                "charcoal/view": "3.1.8",
                 "locomotivemtl/charcoal-admin": "*",
                 "locomotivemtl/charcoal-app": "*",
                 "locomotivemtl/charcoal-attachment": "*",
@@ -281,10 +281,10 @@
                 "framework"
             ],
             "support": {
-                "source": "https://github.com/charcoalphp/charcoal/tree/v3.1.6",
+                "source": "https://github.com/charcoalphp/charcoal/tree/v3.1.8",
                 "issues": "https://github.com/charcoalphp/charcoal/issues"
             },
-            "time": "2022-09-13T18:44:28+00:00"
+            "time": "2022-09-15T20:58:10+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -4707,16 +4707,16 @@
         },
         {
             "name": "sebastian/comparator",
-            "version": "4.0.6",
+            "version": "4.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "55f4261989e546dc112258c7a75935a81a7ce382"
+                "reference": "fa0f136dd2334583309d32b62544682ee972b51a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/55f4261989e546dc112258c7a75935a81a7ce382",
-                "reference": "55f4261989e546dc112258c7a75935a81a7ce382",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/fa0f136dd2334583309d32b62544682ee972b51a",
+                "reference": "fa0f136dd2334583309d32b62544682ee972b51a",
                 "shasum": ""
             },
             "require": {
@@ -4769,7 +4769,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/comparator/issues",
-                "source": "https://github.com/sebastianbergmann/comparator/tree/4.0.6"
+                "source": "https://github.com/sebastianbergmann/comparator/tree/4.0.8"
             },
             "funding": [
                 {
@@ -4777,7 +4777,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-26T15:49:45+00:00"
+            "time": "2022-09-14T12:41:17+00:00"
         },
         {
             "name": "sebastian/complexity",
@@ -4967,16 +4967,16 @@
         },
         {
             "name": "sebastian/exporter",
-            "version": "4.0.4",
+            "version": "4.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/exporter.git",
-                "reference": "65e8b7db476c5dd267e65eea9cab77584d3cfff9"
+                "reference": "ac230ed27f0f98f597c8a2b6eb7ac563af5e5b9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/65e8b7db476c5dd267e65eea9cab77584d3cfff9",
-                "reference": "65e8b7db476c5dd267e65eea9cab77584d3cfff9",
+                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/ac230ed27f0f98f597c8a2b6eb7ac563af5e5b9d",
+                "reference": "ac230ed27f0f98f597c8a2b6eb7ac563af5e5b9d",
                 "shasum": ""
             },
             "require": {
@@ -5032,7 +5032,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/exporter/issues",
-                "source": "https://github.com/sebastianbergmann/exporter/tree/4.0.4"
+                "source": "https://github.com/sebastianbergmann/exporter/tree/4.0.5"
             },
             "funding": [
                 {
@@ -5040,7 +5040,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-11-11T14:18:36+00:00"
+            "time": "2022-09-14T06:03:37+00:00"
         },
         {
             "name": "sebastian/global-state",
