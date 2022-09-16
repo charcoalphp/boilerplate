@@ -1,7 +1,7 @@
 # Charcoal
 # -------
 
-/.env
+.env
 /config/admin.*.*
 !/config/admin.sample.*
 /config/config.*.*
@@ -19,17 +19,18 @@ loconfig.*.json
 # Package Managers
 # -------
 
+bower_components/
 composer.phar
+node_modules/
 /vendor/
-/node_modules/
-/bower_components/
 
 # Logging
 # -------
 
 *.log
 error_log
-/logs/
+logs/
+reports/
 
 # Testing
 # -------
@@ -39,11 +40,10 @@ phpstan.neon
 phpunit.xml
 psalm.xml
 
-
 # Caches
 # -------
 
-/.phpunit.result.cache
-/cache/
-/test-reports/
-/tmp/
+.phpunit.result.cache
+cache/
+test-reports/
+tmp/
