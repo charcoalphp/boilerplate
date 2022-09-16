@@ -13,7 +13,8 @@ See below for an [overview](#overview) of this skeleton's structure and objectiv
 
 ## Installation
 
-Using the [Composer](https://getcomposer.org/) dependency manager for PHP:
+This skeleton is available on [Packagist][charcoal/boilerplate] and can be
+installed using [Composer]:
 
 ```shell
 composer create-project charcoal/boilerplate example-project
@@ -378,9 +379,11 @@ accomplished with this skeleton:
 🚂
 
 [charcoal/admin]:                       https://github.com/charcoalphp/charcoal/tree/main/packages/admin
+[charcoal/boilerplate]:                 https://packagist.org/packages/charcoal/boilerplate
 [charcoal/charcoal]:                    https://github.com/charcoalphp/charcoal
 [commitizen]:                           https://github.com/commitizen/cz-cli
 [commitizen-badge]:                     https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square
+[Composer]:                             https://getcomposer.org/
 [conventional-commits]:                 https://www.conventionalcommits.org/en/v1.0.0/
 [EditorConfig]:                         https://editorconfig.org/
 [github-actions]:                       https://github.com/charcoalphp/boilerplate/actions
