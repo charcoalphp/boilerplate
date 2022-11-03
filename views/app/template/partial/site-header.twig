@@ -1,0 +1,40 @@
+<!doctype html>
+<html {{ htmlAttr|raw}}>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <base href="{{ baseUrl() }}">
+
+    {% include 'charcoal/cms/metatag/document' %}
+    {% include 'charcoal/cms/metatag/opengraph' %}
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="HandheldFriendly" content="true">
+
+    <!-- Appearance -->
+    <meta name="theme-color" content="#FFFFFF">
+
+    <!-- Styles -->
+    {% if criticalCss %}
+    <style media="all">
+        {{ criticalCss|raw }}
+    </style>
+    {% endif %}
+
+    <!-- Add your own styles
+    <link rel="stylesheet" href="{{ withBaseUrl('assets/styles/main.css?v=') }}{{ assetsVersion }}">
+    -->
+
+    {%if google.analytics.tracking_id %}
+    <script>
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+        ga('create', '{{ google.analytics.tracking_id|raw }}', 'auto');
+        ga('send', 'pageview');
+    </script>
+    <script async src="https://www.google-analytics.com/analytics.js"></script>
+    {% endif %}
+</head>
+<body>
+

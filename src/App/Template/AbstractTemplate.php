@@ -16,10 +16,96 @@ abstract class AbstractTemplate extends AbstractWebTemplate
      */
     public const ASSETS_VERSION = '1.0.0';
 
+    const CORE_TEMPLATE_ACTIONS = [
+        'debug',
+        'siteName',
+        'google',
+        'typekit',
+        'htmlAttrStructure',
+        'htmlAttr',
+        'assetsVersion',
+        'copyright',
+        'copyrightName',
+        'copyrightYear',
+        'criticalCss',
+        'templateName',
+        'title',
+        'currentLocale',
+        'currentUrl',
+        'currentLanguage',
+        'metaTitle',
+        'metaDescription',
+        // 'metaImage',
+        'opengraphType',
+        // 'opengraphImage',
+        'seoMetadata',
+        'baseUrl',
+        'availableLanguages',
+        'hasSeoMetadata',
+        'documentTitle',
+        'hasAlternateTranslations',
+        'alternateTranslations',
+    ];
+
+    /**
+     * Gets the data keys on this entity.
+     * @see
+     *
+     * @return array
+     */
+    public function keys($keys = null)
+    {
+        $methods = $this->retrieveDynamicMethods();
+        return array_merge(self::CORE_TEMPLATE_ACTIONS, $methods);
+    }
+
+    private function retrieveDynamicMethods()
+    {
+        $reflectionClass = new \ReflectionClass($this);
+        $reflectionMethods = $reflectionClass->getMethods();
+        $methodKeys = [];
+        foreach ($reflectionMethods as $reflectionMethod) {
+            if (substr($reflectionMethod->class, 0, 3) !== 'App') {
+               continue;
+            }
+
+            if (substr($reflectionMethod->name, 0, 3) === 'get') {
+               $methodKeys[] = lcfirst(substr($reflectionMethod->name, 3));
+            }
+        }
+        return $methodKeys;
+    }
 
 
     // Site Head/Metatags
     // ============================================================
+
+    /**
+     * @see Charcoal\Cms\Support\LocaleAwareTrait
+     *
+     * Format an alternate translation URL for the given translatable model.
+     *
+     * Note: The application's locale is already modified and will be reset
+     * after processing all available languages.
+     *
+     * @param  mixed $context      The translated {@see \Charcoal\Model\ModelInterface model}
+     *     or array-accessible structure.
+     * @param  array $localeStruct The currently iterated language.
+     * @return string Returns a link.
+     */
+    protected function formatAlternateTranslationUrl($context, array $localeStruct)
+    {
+        $isRoutable = ($context instanceof RoutableInterface && $context->isActiveRoute());
+        $langCode   = $localeStruct['code'];
+        $path       = ($isRoutable ? $context->url($langCode) : ($this->currentUrl() ? : $langCode));
+
+        if ($path instanceof UriInterface) {
+            $path = $path->getPath();
+        }
+
+        // Overrwrite LocaleAwareTrait to parse the url translation path with string for Twig
+        return (string) $this->baseUrl()->withPath($path);
+    }
 
     /**
      * Retrieve the site name.

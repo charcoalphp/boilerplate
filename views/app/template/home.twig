@@ -1,0 +1,13 @@
+{% include 'app/template/partial/site-header' %}
+
+<h1>{{ siteName }}</h1>
+
+<h1>{{ 'header.menu.home'|trans }}</h1>
+
+<h2>Home template.</h2>
+
+<p>Calling the "test" method: <strong>{{ test }}</strong></p>
+
+<p>Template name: {{ templateName }}</p>
+
+{% include 'app/template/partial/site-footer' %}
