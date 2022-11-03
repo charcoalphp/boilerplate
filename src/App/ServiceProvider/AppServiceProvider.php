@@ -44,7 +44,7 @@ class AppServiceProvider implements ServiceProviderInterface
          * @param  Container $container A container instance.
          * @return array
          */
-        $container->extend('view/twig/helpers', function (array $helpers, Container $container) {
+        $container->extend('view/twig/helpers', function (array $helpers) {
             return array_merge(
                 $helpers,
                 [ new DebugExtension() ],

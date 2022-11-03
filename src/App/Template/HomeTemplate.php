@@ -16,11 +16,4 @@ class HomeTemplate extends AbstractTemplate
     {
         return 'TEST ' . rand(0, 100);
     }
-
-    public function getTemplateData(): array
-    {
-        return [
-            'summary'   => (string) $this['contextObject']['summary'],
-        ];
-    }
 }
