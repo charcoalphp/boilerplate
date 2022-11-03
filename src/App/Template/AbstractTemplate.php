@@ -4,6 +4,9 @@ namespace App\Template;
 
 use Charcoal\Cms\AbstractWebTemplate;
 
+use ReflectionClass;
+use ReflectionMethod;
+
 /**
  * Base Template Controller
  */
@@ -16,64 +19,70 @@ abstract class AbstractTemplate extends AbstractWebTemplate
      */
     public const ASSETS_VERSION = '1.0.0';
 
-    const CORE_TEMPLATE_ACTIONS = [
-        'debug',
-        'siteName',
-        'google',
-        'typekit',
-        'htmlAttrStructure',
-        'htmlAttr',
-        'assetsVersion',
-        'copyright',
-        'copyrightName',
-        'copyrightYear',
-        'criticalCss',
-        'templateName',
-        'title',
-        'currentLocale',
-        'currentUrl',
-        'currentLanguage',
-        'metaTitle',
-        'metaDescription',
-        // 'metaImage',
-        'opengraphType',
-        // 'opengraphImage',
-        'seoMetadata',
-        'baseUrl',
-        'availableLanguages',
-        'hasSeoMetadata',
-        'documentTitle',
-        'hasAlternateTranslations',
-        'alternateTranslations',
-    ];
-
     /**
      * Gets the data keys on this entity.
-     * @see
      *
      * @return array
      */
-    public function keys($keys = null)
+    public function keys()
     {
-        $methods = $this->retrieveDynamicMethods();
-        return array_merge(self::CORE_TEMPLATE_ACTIONS, $methods);
+        $methods = $this->getTemplateMethods();
+        return array_merge([
+            'alternateTranslations',
+            'assetsVersion',
+            'availableLanguages',
+            'baseUrl',
+            'copyright',
+            'copyrightName',
+            'copyrightYear',
+            'criticalCss',
+            'currentLanguage',
+            'currentLocale',
+            'currentUrl',
+            'debug',
+            'documentTitle',
+            'google',
+            'hasAlternateTranslations',
+            'hasSeoMetadata',
+            'htmlAttr',
+            'htmlAttrStructure',
+            'metaTitle',
+            'metaDescription',
+            'opengraphType',
+            'seoMetadata',
+            'siteName',
+            'templateName',
+            'title',
+            'typekit',
+        ], $methods);
     }
 
-    private function retrieveDynamicMethods()
+    /**
+     * Retrieve the template's public methods.
+     *
+     * @return string[]
+     */
+    private function getTemplateMethods(): array
     {
-        $reflectionClass = new \ReflectionClass($this);
-        $reflectionMethods = $reflectionClass->getMethods();
-        $methodKeys = [];
+        $reflectionClass   = new ReflectionClass($this);
+        $reflectionMethods = $reflectionClass->getMethods(ReflectionMethod::IS_PUBLIC);
+
+        $keys = [];
         foreach ($reflectionMethods as $reflectionMethod) {
+            /** Include only methods in the {@see \App} namespace. */
             if (substr($reflectionMethod->class, 0, 3) !== 'App') {
-               continue;
+                continue;
             }
 
+            /** Include only methods with the following prefixes. */
             if (substr($reflectionMethod->name, 0, 3) === 'get') {
-               $methodKeys[] = lcfirst(substr($reflectionMethod->name, 3));
+                $keys[] = lcfirst(substr($reflectionMethod->name, 3));
+            } elseif (preg_match('/^(has|hide|is|show)/', $reflectionMethod->name)) {
+                $keys[] = lcfirst(substr($reflectionMethod->name, 3));
             }
         }
-        return $methodKeys;
+
+        return $keys;
     }
 
 
@@ -95,7 +104,7 @@ abstract class AbstractTemplate extends AbstractWebTemplate
     {
         return array_replace(
             parent::formatAlternateTranslation($context, $localeStruct),
-            [ 'url'      => (string) $this->formatAlternateTranslationUrl($context, $localeStruct), ]
+            [ 'url'      => (string)$this->formatAlternateTranslationUrl($context, $localeStruct), ]
         );
     }
 
