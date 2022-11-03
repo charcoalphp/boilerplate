@@ -18,7 +18,7 @@
             }
         },
         "groups": {
-            "content-blocks": [
+            "contentBlocks": [
                 "app/attachment/text",
                 "app/attachment/image",
                 "app/attachment/gallery",
@@ -26,22 +26,17 @@
             ]
         },
         "widgets": {
-            "content-blocks": {
-                "title": {
-                    "en": "Content block",
-                    "fr": "Blocs de contenu"
-                },
-                "show_title": true,
-                "show_header": false,
-                "template": "charcoal/admin/widget/form-group/attachment",
-                "group": "content-blocks",
+            "contentBlocks": {
+                "group": "contentBlocks",
                 "attachment_heading": "{{ ident }}",
-                "attachable_objects": "content-blocks",
+                "attachable_objects": "contentBlocks",
                 "attachment_options": {
-                    "show_header": false,
+                    "show_header": true,
                     "show_preview": true,
                     "show_heading": true
-                }
+                },
+                "show_attachment_heading": true,
+                "show_attachment_preview": true
             }
         }
     }
