@@ -81,9 +81,7 @@ abstract class AbstractTemplate extends AbstractWebTemplate
     // ============================================================
 
     /**
-     * @see Charcoal\Cms\Support\LocaleAwareTrait
-     *
-     * Format an alternate translation URL for the given translatable model.
+     * Format an alternate translation for the given translatable model.
      *
      * Note: The application's locale is already modified and will be reset
      * after processing all available languages.
@@ -91,20 +89,14 @@ abstract class AbstractTemplate extends AbstractWebTemplate
      * @param  mixed $context      The translated {@see \Charcoal\Model\ModelInterface model}
      *     or array-accessible structure.
      * @param  array $localeStruct The currently iterated language.
-     * @return string Returns a link.
+     * @return array Returns a link structure.
      */
-    protected function formatAlternateTranslationUrl($context, array $localeStruct)
+    protected function formatAlternateTranslation($context, array $localeStruct)
     {
-        $isRoutable = ($context instanceof RoutableInterface && $context->isActiveRoute());
-        $langCode   = $localeStruct['code'];
-        $path       = ($isRoutable ? $context->url($langCode) : ($this->currentUrl() ? : $langCode));
-
-        if ($path instanceof UriInterface) {
-            $path = $path->getPath();
-        }
-
-        // Overrwrite LocaleAwareTrait to parse the url translation path with string for Twig
-        return (string) $this->baseUrl()->withPath($path);
+        return array_replace(
+            parent::formatAlternateTranslation($context, $localeStruct),
+            [ 'url'      => (string) $this->formatAlternateTranslationUrl($context, $localeStruct), ]
+        );
     }
 
     /**
@@ -116,7 +108,6 @@ abstract class AbstractTemplate extends AbstractWebTemplate
     {
         return $this->appConfig('project_name');
     }
-
 
 
     // APIs
