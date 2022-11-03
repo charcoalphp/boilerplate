@@ -30,7 +30,7 @@ class ErrorTemplate extends AbstractTemplate
     /**
      * Get the error code.
      */
-    public function errorCode(): ?int
+    public function getErrorCode(): ?int
     {
         $handler = $this->appHandler();
         if ($handler instanceof AbstractError) {
@@ -43,7 +43,7 @@ class ErrorTemplate extends AbstractTemplate
     /**
      * Get the error message.
      */
-    public function errorMessage(): ?string
+    public function getErrorMessage(): ?string
     {
         $handler = $this->appHandler();
         if ($handler instanceof AbstractError) {
@@ -56,7 +56,7 @@ class ErrorTemplate extends AbstractTemplate
     /**
      * Get the error title.
      */
-    public function errorTitle(): ?string
+    public function getErrorTitle(): ?string
     {
         $handler = $this->appHandler();
         if ($handler instanceof AbstractError) {
@@ -69,7 +69,7 @@ class ErrorTemplate extends AbstractTemplate
     /**
      * Get the error details as HTML.
      */
-    public function htmlErrorDetails(): ?string
+    public function getHtmlErrorDetails(): ?string
     {
         if ($this->debug()) {
             $handler = $this->appHandler();
