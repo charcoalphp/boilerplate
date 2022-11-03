@@ -66,11 +66,12 @@
         ]
     },
     "view": {
+        "default_engine": "twig",
+        "use_cache": false,
+        "strict_variables": true,
         "paths": [
             "views/",
-            "%packages.path%/admin/templates/",
             "%packages.path%/app/templates/",
-            "%packages.path%/attachment/templates/",
             "%packages.path%/cms/views/"
         ]
     }

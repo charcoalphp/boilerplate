@@ -23,7 +23,8 @@
     "require": {
         "php": "^7.4 || ^8.0",
         "charcoal/charcoal": "^3.0",
-        "mustache/mustache": "^2.14"
+        "mustache/mustache": "^2.14",
+        "twig/twig": "^3.4"
     },
     "require-dev": {
         "phpstan/phpstan": "^1.7",
