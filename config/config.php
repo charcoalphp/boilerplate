@@ -23,7 +23,8 @@ $this->addFile(__DIR__ . '/attachments.json');
 $this->addFile(dirname(__DIR__) . '/%packages.path%/attachment/config/admin.json');
 
 /** Import local settings */
-$appEnv = 'local';
-if (file_exists(__DIR__.'/config.'.$appEnv.'.json')) {
-    $this->addFile(__DIR__.'/config.'.$appEnv.'.json');
+$appEnv  = 'local';
+$envFile = __DIR__ . '/config.' . $appEnv . '.json';
+if (file_exists($envFile)) {
+    $this->addFile($envFile);
 }
