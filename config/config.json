@@ -41,14 +41,14 @@
     "metadata": {
         "paths": [
             "metadata/",
-            "%packages.path%/admin/metadata/",
-            "%packages.path%/app/metadata/",
-            "%packages.path%/attachment/metadata/",
-            "%packages.path%/cms/metadata/",
-            "%packages.path%/email/metadata/",
-            "%packages.path%/object/metadata/",
-            "%packages.path%/property/metadata/",
-            "%packages.path%/user/metadata/"
+            "vendor/charcoal/charcoal/packages/admin/metadata/",
+            "vendor/charcoal/charcoal/packages/app/metadata/",
+            "vendor/charcoal/charcoal/packages/attachment/metadata/",
+            "vendor/charcoal/charcoal/packages/cms/metadata/",
+            "vendor/charcoal/charcoal/packages/email/metadata/",
+            "vendor/charcoal/charcoal/packages/object/metadata/",
+            "vendor/charcoal/charcoal/packages/property/metadata/",
+            "vendor/charcoal/charcoal/packages/user/metadata/"
         ]
     },
     "modules": {
@@ -60,9 +60,9 @@
     "translator": {
         "paths": [
             "translations/app/",
-            "%packages.path%/admin/translations/",
-            "%packages.path%/app/translations/",
-            "%packages.path%/attachment/translations/"
+            "vendor/charcoal/charcoal/packages/admin/translations/",
+            "vendor/charcoal/charcoal/packages/app/translations/",
+            "vendor/charcoal/charcoal/packages/attachment/translations/"
         ]
     },
     "view": {
@@ -71,8 +71,8 @@
         "strict_variables": true,
         "paths": [
             "views/",
-            "%packages.path%/app/templates/",
-            "%packages.path%/cms/views/"
+            "vendor/charcoal/charcoal/packages/app/templates/",
+            "vendor/charcoal/charcoal/packages/cms/views/"
         ]
     }
 }
