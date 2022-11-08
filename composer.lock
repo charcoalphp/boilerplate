@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a04c84ec8054cf18eb81564861911054",
+    "content-hash": "264d7cec63320f0be4b44c711b9ba23c",
     "packages": [
         {
             "name": "barryvdh/elfinder-flysystem-driver",
@@ -187,63 +187,14 @@
                         "packages/translator/src/Charcoal/",
                         "packages/ui/src/Charcoal/"
                     ],
+                    "Charcoal\\User\\": "packages/user/src/Charcoal/User",
+                    "Charcoal\\View\\": "packages/view/src/Charcoal/View",
                     "Charcoal\\Admin\\": "packages/admin/src/Charcoal/Admin/",
                     "Charcoal\\Email\\": "packages/email/src/Charcoal/Email",
-                    "Charcoal\\Object\\": "packages/object/src/Charcoal/Object",
-                    "Charcoal\\User\\": "packages/user/src/Charcoal/User",
-                    "Charcoal\\View\\": "packages/view/src/Charcoal/View"
+                    "Charcoal\\Object\\": "packages/object/src/Charcoal/Object"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Charcoal\\MonorepoBuilder\\": [
-                        "build/Charcoal/MonorepoBuilder/"
-                    ],
-                    "Charcoal\\Tests\\": [
-                        "packages/admin/tests/Charcoal/",
-                        "packages/app/tests/Charcoal",
-                        "packages/attachment/tests/Charcoal",
-                        "packages/cache/tests/Charcoal/",
-                        "packages/cms/tests/Charcoal",
-                        "packages/config/tests/Charcoal/",
-                        "packages/core/tests/Charcoal",
-                        "packages/email/tests/Charcoal",
-                        "packages/factory/tests/Charcoal/",
-                        "packages/image/tests/Charcoal",
-                        "packages/object/tests/Charcoal/",
-                        "packages/property/tests/Charcoal",
-                        "packages/queue/tests/Charcoal/",
-                        "packages/translator/tests/Charcoal",
-                        "packages/ui/tests/Charcoal",
-                        "packages/user/tests/Charcoal/",
-                        "packages/view/tests/Charcoal"
-                    ]
-                }
-            },
-            "scripts": {
-                "test": [
-                    "@tests"
-                ],
-                "tests": [
-                    "@phpcs",
-                    "@phpunit"
-                ],
-                "phplint": [
-                    "find packages -type f -name '*.php' -print0 | xargs -0 -n1 -P8 php -l | grep -v '^No syntax errors detected'; test $? -eq 1"
-                ],
-                "phpcs": [
-                    "./tests/script/phpcs"
-                ],
-                "phpcbf": [
-                    "php vendor/bin/phpcbf -ps --colors packages/*/src/ --ignore=tests/"
-                ],
-                "phpunit": [
-                    "./tests/script/phpunit"
-                ],
-                "phpstan": [
-                    "vendor/bin/phpstan analyse packages/*/src packages/*/tests"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -281,8 +232,8 @@
                 "framework"
             ],
             "support": {
-                "source": "https://github.com/charcoalphp/charcoal/tree/v4.0.0",
-                "issues": "https://github.com/charcoalphp/charcoal/issues"
+                "issues": "https://github.com/charcoalphp/charcoal/issues",
+                "source": "https://github.com/charcoalphp/charcoal/tree/v4.0.0"
             },
             "time": "2022-09-21T20:45:52+00:00"
         },
@@ -4150,16 +4101,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.9.0",
+            "version": "1.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "e08de53a5eec983de78a787a88e72518cf8fe43a"
+                "reference": "a59c8b5bfd4a236f27efc8b5ce72c313c2b54b5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/e08de53a5eec983de78a787a88e72518cf8fe43a",
-                "reference": "e08de53a5eec983de78a787a88e72518cf8fe43a",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/a59c8b5bfd4a236f27efc8b5ce72c313c2b54b5f",
+                "reference": "a59c8b5bfd4a236f27efc8b5ce72c313c2b54b5f",
                 "shasum": ""
             },
             "require": {
@@ -4189,7 +4140,7 @@
             ],
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/1.9.0"
+                "source": "https://github.com/phpstan/phpstan/tree/1.9.1"
             },
             "funding": [
                 {
@@ -4205,7 +4156,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-03T07:26:48+00:00"
+            "time": "2022-11-04T13:35:59+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -5951,16 +5902,16 @@
         },
         {
             "name": "vimeo/psalm",
-            "version": "4.29.0",
+            "version": "4.30.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vimeo/psalm.git",
-                "reference": "7ec5ffbd5f68ae03782d7fd33fff0c45a69f95b3"
+                "reference": "d0bc6e25d89f649e4f36a534f330f8bb4643dd69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vimeo/psalm/zipball/7ec5ffbd5f68ae03782d7fd33fff0c45a69f95b3",
-                "reference": "7ec5ffbd5f68ae03782d7fd33fff0c45a69f95b3",
+                "url": "https://api.github.com/repos/vimeo/psalm/zipball/d0bc6e25d89f649e4f36a534f330f8bb4643dd69",
+                "reference": "d0bc6e25d89f649e4f36a534f330f8bb4643dd69",
                 "shasum": ""
             },
             "require": {
@@ -6053,9 +6004,9 @@
             ],
             "support": {
                 "issues": "https://github.com/vimeo/psalm/issues",
-                "source": "https://github.com/vimeo/psalm/tree/4.29.0"
+                "source": "https://github.com/vimeo/psalm/tree/4.30.0"
             },
-            "time": "2022-10-11T17:09:17+00:00"
+            "time": "2022-11-06T20:37:08+00:00"
         },
         {
             "name": "webmozart/assert",
