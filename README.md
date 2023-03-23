@@ -387,7 +387,7 @@ accomplished with this skeleton:
 [conventional-commits]:                 https://www.conventionalcommits.org/en/v1.0.0/
 [EditorConfig]:                         https://editorconfig.org/
 [github-actions]:                       https://github.com/charcoalphp/boilerplate/actions
-[github-badge]:                         https://img.shields.io/github/workflow/status/charcoalphp/boilerplate/Test?label=build
+[github-badge]:                         https://img.shields.io/github/actions/workflow/status/charcoalphp/boilerplate/ci.yml?branch=main
 [keepachangelog]:                       https://keepachangelog.com/en/1.0.0/
 [license-badge]:                        https://img.shields.io/packagist/l/charcoal/boilerplate.svg?style=flat-square
 [locomotive/boilerplate]:               https://github.com/locomotivemtl/locomotive-boilerplate
