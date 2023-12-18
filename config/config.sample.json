@@ -1,4 +1,20 @@
 {
+    "debug": true,
+    "logger": {
+        "level": "debug"
+    },
+    "cache": {
+        "active": true,
+        "types": [ "apc", "memcache" ],
+        "prefix": "acme"
+    },
+    "apis": {
+        "google": {
+            "analytics": {
+                "tracking_id": ""
+            }
+        }
+    },
     "databases": {
         "mysql": {
             "type": "mysql",
@@ -11,9 +27,5 @@
             "database": ":memory:"
         }
     },
-    "default_database": "mysql",
-    "dev_mode": true,
-    "logger": {
-        "level": "debug"
-    }
+    "default_database": "mysql"
 }

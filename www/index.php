@@ -27,7 +27,7 @@ $appConfig->addFile($basePath . '/config/config.php');
 $container = new AppContainer([
     'config' => $appConfig,
     'settings' => [
-        'displayErrorDetails' => $appConfig['dev_mode'],
+        'displayErrorDetails' => $appConfig['debug'],
     ],
 ]);
 

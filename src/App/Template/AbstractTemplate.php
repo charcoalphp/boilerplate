@@ -53,7 +53,6 @@ abstract class AbstractTemplate extends AbstractWebTemplate
             'siteName',
             'templateName',
             'title',
-            'typekit',
         ], $methods);
     }
 
@@ -128,14 +127,6 @@ abstract class AbstractTemplate extends AbstractWebTemplate
     public function google()
     {
         return $this->appConfig('apis.google');
-    }
-
-    /**
-     * @return string
-     */
-    public function typekit()
-    {
-        return $this->appConfig('apis.typekit');
     }
 
 

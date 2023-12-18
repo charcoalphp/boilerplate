@@ -2,20 +2,8 @@
     "project_name": "Acme",
     "timezone": "America/Montreal",
     "admin_config": "config/admin.php",
-    "apis": {
-        "google": {
-            "analytics": {
-                "tracking_id": ""
-            }
-        },
-        "typekit": {
-            "kit_id": ""
-        }
-    },
-    "cache": {
-        "active": true,
-        "types": [ "apc", "memcache", "redis" ],
-        "prefix": "acme"
+    "logger": {
+        "level": "warning"
     },
     "email": {
         "default_from": {
@@ -33,10 +21,6 @@
             }
         },
         "default_language": "fr"
-    },
-    "logger": {
-        "active": true,
-        "level": "warning"
     },
     "metadata": {
         "paths": [
