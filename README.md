@@ -1,12 +1,5 @@
 # Charcoal Project Boilerplate
 
-[![Build Status][github-badge]][github-actions]
-[![Latest Stable Version][version-badge]](CHANGELOG)
-[![License][license-badge]](LICENSE)
-[![Uses Semantic Release with Conventional Commits][semantic-release-badge]][semantic-release]
-[![Commitizen-friendly][commitizen-badge]][commitizen]
-[![Supported PHP Version][php-badge]](composer.json)
-
 A skeleton for creating Web sites with [Charcoal][charcoal/charcoal].
 
 See below for an [overview](#overview) of this skeleton's structure and objectives.
@@ -147,10 +140,11 @@ For more information, visit Locomotive's [Boilerplate repository][locomotive/boi
 ## Server Requirements
 
 * [PHP] >= 7.4
-* [JSON](https://www.php.net/manual/en/book.json.php) PHP Extension
-* [MBString](https://www.php.net/manual/en/book.mbstring.php) PHP Extension
-* [PDO](https://www.php.net/manual/en/book.pdo.php) PHP Extension
-* [SPL](https://www.php.net/manual/en/book.spl.php) PHP Extension
+* PHP Extensions:
+  * [JSON](https://www.php.net/manual/en/book.json.php)
+  * [MBString](https://www.php.net/manual/en/book.mbstring.php)
+  * [PDO](https://www.php.net/manual/en/book.pdo.php)
+  * [SPL](https://www.php.net/manual/en/book.spl.php)
 
 ## Server Configuration
 
@@ -381,15 +375,8 @@ accomplished with this skeleton:
 [charcoal/admin]:                       https://github.com/charcoalphp/charcoal/tree/main/packages/admin
 [charcoal/boilerplate]:                 https://packagist.org/packages/charcoal/boilerplate
 [charcoal/charcoal]:                    https://github.com/charcoalphp/charcoal
-[commitizen]:                           https://github.com/commitizen/cz-cli
-[commitizen-badge]:                     https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square
 [Composer]:                             https://getcomposer.org/
-[conventional-commits]:                 https://www.conventionalcommits.org/en/v1.0.0/
 [EditorConfig]:                         https://editorconfig.org/
-[github-actions]:                       https://github.com/charcoalphp/boilerplate/actions
-[github-badge]:                         https://img.shields.io/github/actions/workflow/status/charcoalphp/boilerplate/ci.yml?branch=main
-[keepachangelog]:                       https://keepachangelog.com/en/1.0.0/
-[license-badge]:                        https://img.shields.io/packagist/l/charcoal/boilerplate.svg?style=flat-square
 [locomotive/boilerplate]:               https://github.com/locomotivemtl/locomotive-boilerplate
 [packagist.org]:                        https://packagist.org/packages/charcoal/boilerplate
 [PHP]:                                  https://php.net/
@@ -398,13 +385,8 @@ accomplished with this skeleton:
 [PHP_CodeSniffer]:                      https://github.com/squizlabs/PHP_CodeSniffer
 [PHPStan]:                              https://phpstan.org/
 [PHPUnit]:                              https://phpunit.de/
-[php-badge]:                            https://img.shields.io/packagist/php-v/charcoal/boilerplate?style=flat-square&logo=php
 [Psalm]:                                https://psalm.dev/
 [PSR-4]:                                https://www.php-fig.org/psr/psr-4/
 [PSR-12]:                               https://www.php-fig.org/psr/psr-12/
 [seld/jsonlint]:                        https://github.com/Seldaek/jsonlint
-[semantic-release]:                     https://github.com/semantic-release/semantic-release
-[semantic-release-badge]:               https://img.shields.io/badge/semantic--release-conventionalcommits-e10079?logo=semantic-release&style=flat-square
-[semver]:                               https://semver.org
 [SQLite]:                               https://www.sqlite.org/
-[version-badge]:                        https://img.shields.io/packagist/v/charcoal/boilerplate.svg?style=flat-square&logo=packagist
