@@ -3,7 +3,6 @@
 namespace App\Template;
 
 use Charcoal\Cms\AbstractWebTemplate;
-
 use ReflectionClass;
 use ReflectionMethod;
 
