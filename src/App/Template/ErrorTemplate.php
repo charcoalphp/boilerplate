@@ -3,7 +3,8 @@
 namespace App\Template;
 
 use App\Template\AbstractTemplate;
-use Charcoal\App\Handler\AbstractError;
+use Charcoal\App\Handler\AbstractError as ErrorHandler;
+use Charcoal\App\Handler\AbstractHandler as HttpHandler;
 use Charcoal\App\Handler\HandlerAwareTrait;
 
 /**
@@ -20,7 +21,7 @@ class ErrorTemplate extends AbstractTemplate
      */
     public function debug()
     {
-        if ($this->appHandler() instanceof AbstractError) {
+        if ($this->appHandler() instanceof ErrorHandler) {
             return parent::debug();
         }
 
@@ -33,7 +34,7 @@ class ErrorTemplate extends AbstractTemplate
     public function getErrorCode(): ?int
     {
         $handler = $this->appHandler();
-        if ($handler instanceof AbstractError) {
+        if ($handler instanceof HttpHandler) {
             return $handler->getCode();
         }
 
@@ -46,7 +47,7 @@ class ErrorTemplate extends AbstractTemplate
     public function getErrorMessage(): ?string
     {
         $handler = $this->appHandler();
-        if ($handler instanceof AbstractError) {
+        if ($handler instanceof HttpHandler) {
             return $handler->getMessage();
         }
 
@@ -59,7 +60,7 @@ class ErrorTemplate extends AbstractTemplate
     public function getErrorTitle(): ?string
     {
         $handler = $this->appHandler();
-        if ($handler instanceof AbstractError) {
+        if ($handler instanceof HttpHandler) {
             return $handler->getSummary();
         }
 
@@ -73,7 +74,7 @@ class ErrorTemplate extends AbstractTemplate
     {
         if ($this->debug()) {
             $handler = $this->appHandler();
-            if ($handler instanceof AbstractError) {
+            if ($handler instanceof ErrorHandler) {
                 return $handler->renderHtmlErrorDetails();
             }
         }
