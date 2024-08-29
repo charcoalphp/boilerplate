@@ -7,8 +7,8 @@
 {% else %}
 
 {% include 'app/template/partial/site-header' %}
-<h1>{{ "Page Not Found"|trans }}</h1>
-<p>{{ "The page you are looking for could not be found."|trans }}</p>
+<h1>{{ errorTitle }}</h1>
+<p>{{ errorMessage }}</p>
 {% include 'app/template/partial/site-footer' %}
 
 {% endif %}
