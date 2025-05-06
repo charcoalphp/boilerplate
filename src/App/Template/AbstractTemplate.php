@@ -76,7 +76,7 @@ abstract class AbstractTemplate extends AbstractWebTemplate
             if (substr($reflectionMethod->name, 0, 3) === 'get') {
                 $keys[] = lcfirst(substr($reflectionMethod->name, 3));
             } elseif (preg_match('/^(has|hide|is|show)/', $reflectionMethod->name)) {
-                $keys[] = lcfirst(substr($reflectionMethod->name, 3));
+                $keys[] = $reflectionMethod->name;
             }
         }
 
