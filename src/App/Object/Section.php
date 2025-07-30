@@ -3,7 +3,7 @@
 namespace App\Object;
 
 use App\Support\AdminAwareTrait;
-use Pimple\Container;
+use DI\Container;
 use Charcoal\Attachment\Traits\AttachmentAwareTrait;
 use Charcoal\Cms\AbstractSection;
 use Charcoal\Loader\CollectionLoaderAwareTrait;
@@ -24,6 +24,6 @@ class Section extends AbstractSection
     public function setDependencies(Container $container)
     {
         parent::setDependencies($container);
-        $this->setCollectionLoader($container['model/collection/loader']);
+        $this->setCollectionLoader($container->get('model/collection/loader'));
     }
 }

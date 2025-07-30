@@ -4,14 +4,14 @@ namespace App\ServiceProvider;
 
 use Charcoal\Email\ServiceProvider\EmailServiceProvider;
 use Charcoal\Model\ServiceProvider\ModelServiceProvider;
-use Pimple\Container;
-use Pimple\ServiceProviderInterface;
+use DI\Container;
 use Twig\Extension\DebugExtension;
+use Charcoal\App\ServiceProvider\AppServiceProvider as CharcoalAppServiceProvider;
 
 /**
  * App Service Provider
  */
-class AppServiceProvider implements ServiceProviderInterface
+class AppServiceProvider extends CharcoalAppServiceProvider
 {
     /**
      * @param  Container $container A service container.
@@ -19,10 +19,16 @@ class AppServiceProvider implements ServiceProviderInterface
      */
     public function register(Container $container)
     {
-        $container->register(new EmailServiceProvider());
-        $container->register(new ModelServiceProvider());
+        (new EmailServiceProvider())->register($container);
+        (new ModelServiceProvider())->register($container);
 
-        $container->extend('view/mustache/helpers', function (array $helpers): array {
+        $container->set('view/mustache/helpers', function (Container $container): array {
+            $helpers = [];
+
+            if ($container->has('view/mustache/helpers')) {
+                $helpers = $container->get('view/mustache/helpers');
+            }
+
             $helper = [
                 /**
                  * Retrieve the current date/time.
@@ -44,7 +50,13 @@ class AppServiceProvider implements ServiceProviderInterface
          * @param  Container $container A container instance.
          * @return array
          */
-        $container->extend('view/twig/helpers', function (array $helpers) {
+        $container->set('view/twig/helpers', function (Container $container): array {
+            $helpers = [];
+
+            if ($container->has('view/twig/helpers')) {
+                $helpers = $container->get('view/twig/helpers');
+            }
+
             return array_merge(
                 $helpers,
                 [ new DebugExtension() ],

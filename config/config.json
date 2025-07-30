@@ -56,7 +56,8 @@
         "paths": [
             "views/",
             "vendor/charcoal/charcoal/packages/app/templates/",
-            "vendor/charcoal/charcoal/packages/cms/views/"
+            "vendor/charcoal/charcoal/packages/cms/views/",
+            "vendor/charcoal/charcoal/packages/admin/templates/"
         ]
     }
 }

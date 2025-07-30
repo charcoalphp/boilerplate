@@ -8,8 +8,9 @@ use Charcoal\App\DebugAwareTrait;
 use Charcoal\Model\ModelFactoryTrait;
 use Charcoal\Translator\TranslatorAwareTrait;
 use Closure;
-use Pimple\Container;
+use DI\Container;
 use Psr\Http\Message\UriInterface;
+use Psr\Http\Message\ServerRequestInterface;
 
 /**
  * Base API Controller
@@ -118,5 +119,29 @@ abstract class AbstractAction extends CharcoalAction
         $this->setDebug($container['debug']);
         $this->setBaseUrl($container['base-url']);
         $this->setAppConfig($container['app/site']);
+    }
+
+    public static function getParams(ServerRequestInterface $request, ?array $keys = []): array
+    {
+        $params = $request->getQueryParams();
+        $body = $request->getParsedBody();
+
+        if (is_array($body)) {
+            $params = array_merge($params, $body);
+        }
+
+        if (!empty($keys)) {
+            $params = array_filter($params, function ($param) use ($keys) {
+                return in_array($param, $keys);
+            }, ARRAY_FILTER_USE_KEY);
+        }
+
+        return $params;
+    }
+
+    public static function getParam(ServerRequestInterface $request, string $key): mixed
+    {
+        $params = self::getParams($request, [$key]);
+        return ($params ?? null);
     }
 }
